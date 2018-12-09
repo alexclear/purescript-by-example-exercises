@@ -20,3 +20,11 @@ cartesian a b = do
   i <- a
   j <- b
   pure [i, j]
+
+triples :: Int -> Array (Array Int)
+triples n = do
+  a <- 1 .. n
+  b <- a .. n
+  c <- a .. n
+  guard $ a * a + b * b == c * c
+  pure [a, b, c]
