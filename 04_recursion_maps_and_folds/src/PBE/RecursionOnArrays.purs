@@ -1,7 +1,7 @@
 module PBE.RecursionOnArrays where
 
 import Prelude
-import Data.Array (null)
+import Data.Array (null, filter)
 import Data.Array.Partial (tail, head)
 import Partial.Unsafe (unsafePartial)
 
@@ -19,3 +19,6 @@ numEvens arr =
 
 squares :: Array Number -> Array Number
 squares = map (\n -> n * n)
+
+filterNegatives :: Array Int -> Array Int
+filterNegatives = filter (\n -> n >= 0)
