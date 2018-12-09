@@ -3,7 +3,7 @@ module PBE.ArrayComprehensionsGuards where
 import Prelude
 
 import Control.MonadZero (guard)
-import Data.Array (length, null, (..))
+import Data.Array (index, (!!), length, null, (..))
 
 factors :: Int -> Array (Array Int)
 factors n = do
@@ -14,3 +14,9 @@ factors n = do
 
 isPrime :: Int -> Boolean
 isPrime n = (length $ factors n) == 1
+
+cartesian :: forall a. Array a -> Array a -> Array (Array a)
+cartesian a b = do
+  i <- a
+  j <- b
+  pure [i, j]
