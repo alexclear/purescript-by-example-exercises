@@ -16,3 +16,6 @@ numEvens arr =
     else if isEven (unsafePartial head arr)
       then 1 + numEvens (unsafePartial tail arr)
       else numEvens (unsafePartial tail arr)
+
+squares :: Array Number -> Array Number
+squares = map (\n -> n * n)
