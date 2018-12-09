@@ -22,3 +22,8 @@ squares = map (\n -> n * n)
 
 filterNegatives :: Array Int -> Array Int
 filterNegatives = filter (\n -> n >= 0)
+
+infix 8 filter as <$?>
+
+filterNegatives2 :: Array Int -> Array Int
+filterNegatives2 arr = (\n -> n >= 0) <$?> arr
